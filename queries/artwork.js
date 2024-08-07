@@ -49,7 +49,7 @@ const deleteArtWork = async (id) => {
 const updateArtinformation = async (id, newInfo) => {
     try {
         const updatedInfo = await db.one(
-            "UPDATE artwork SET title=$1, art_sector=$2, date_created=$3, statement=$4, save_for_inspo=$5, save_for_inspo=$6, WHERE id=$7 RETURNING *",
+            "UPDATE artwork SET title=$1, art_sector=$2, date_created=$3, statement=$4, save_for_inspo=$5, save_for_inspo=$6 WHERE id=$7 RETURNING *",
             [
                 newInfo.title, 
                 newInfo.art_sector,
